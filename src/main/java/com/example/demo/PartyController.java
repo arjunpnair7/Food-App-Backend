@@ -20,7 +20,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @RestController
 //@CrossOrigin(origins = "http://localhost:3000")
 //@CrossOrigin
-@CrossOrigin(origins = "https://food-app-website-gzpz.vercel.app")
+@CrossOrigin(origins = "https://food-app-website-5laf.vercel.app")
 
 public class PartyController {
 

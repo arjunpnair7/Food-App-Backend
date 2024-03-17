@@ -15,7 +15,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.Random;
 
 //@CrossOrigin(origins = "http://localhost:3000")
-@CrossOrigin(origins = "https://food-app-website-5laf.vercel.app")
+//@CrossOrigin(origins = "https://food-app-website-5laf.vercel.app")
+@CrossOrigin
+
 @RestController
 public class VotingController {
 

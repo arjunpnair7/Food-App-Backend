@@ -8,7 +8,7 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 //@CrossOrigin(origins = "http://localhost:3000")
-@CrossOrigin
+@CrossOrigin(origins = "https://food-app-website-gzpz.vercel.app")
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {

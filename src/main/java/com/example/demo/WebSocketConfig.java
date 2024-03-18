@@ -9,7 +9,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 
 //@CrossOrigin(origins = "http://localhost:3000")
 //@CrossOrigin(origins = "https://food-app-website-5laf.vercel.app")
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {

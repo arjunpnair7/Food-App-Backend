@@ -15,7 +15,7 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 
 @Configuration
 @EnableWebSocketMessageBroker
-@CrossOrigin(origins = "https://food-app-website-gzpz.vercel.app")
+@CrossOrigin(origins = "*")
 //https://food-app-website-gzpz.vercel.app
 
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {

@@ -13,7 +13,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @ComponentScan(basePackages = "com.example")
 @EnableFeignClients(basePackages = "com.example")
-@CrossOrigin(origins = "https://food-app-website-gzpz.vercel.app")
+@CrossOrigin(origins = "*")
 public class ProjectConfig {
 
     @Bean

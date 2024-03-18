@@ -13,18 +13,20 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @ComponentScan(basePackages = "com.example")
 @EnableFeignClients(basePackages = "com.example")
-@CrossOrigin(origins = "*")
-public class ProjectConfig {
+//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 
-    @Bean
-    public CorsConfigurationSource corsConfiguration() {
-        CorsConfiguration corsConfig = new CorsConfiguration();
-        corsConfig.applyPermitDefaultValues();
-        corsConfig.addAllowedOrigin("https://food-app-website-gzpz.vercel.app");
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", corsConfig);
-        return source;
-    }
+public class ProjectConfig {
+//
+//    @Bean
+//    public CorsConfigurationSource corsConfiguration() {
+//        CorsConfiguration corsConfig = new CorsConfiguration();
+//        corsConfig.applyPermitDefaultValues();
+//        corsConfig.addAllowedOrigin("https://food-app-website-gzpz.vercel.app");
+//        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+//        source.registerCorsConfiguration("/**", corsConfig);
+//        return source;
+//    }
 }
 
 

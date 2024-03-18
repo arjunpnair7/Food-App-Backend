@@ -7,10 +7,19 @@ public class Party {
     private int counter;
 
     Set<Restaurant> filteredList = new HashSet<>();
+    List<Restaurant> filteredRestaurantList = new ArrayList<>();
     Map<String, Restaurant> idToRoomMap = new HashMap<>();
 
 
     public Party() {}
+
+    public List<Restaurant> getFilteredRestaurantList() {
+        return filteredRestaurantList;
+    }
+
+    public void setFilteredRestaurantList(List<Restaurant> filteredRestaurantList) {
+        this.filteredRestaurantList = filteredRestaurantList;
+    }
 
     public int getCounter() {
         return counter;
@@ -22,6 +31,9 @@ public class Party {
 
     public Set<Restaurant> getFilteredList() {
         return filteredList;
+    }
+    public void setFilteredList(Set<Restaurant> filteredList) {
+        this.filteredList = filteredList;
     }
 
     public Map<String, Restaurant> getIdToRoomMap() {

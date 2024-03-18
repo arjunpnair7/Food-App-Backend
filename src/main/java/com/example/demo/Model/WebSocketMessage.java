@@ -15,7 +15,8 @@ public class WebSocketMessage {
         USER_LIST,
         DATA,
         DONE_VOTING,
-        NOT_DONE
+        NOT_DONE,
+        VOTE_AGAIN
         // Add more message types as needed
     }
     private MessageType type;

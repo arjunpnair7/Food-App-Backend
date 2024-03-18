@@ -10,15 +10,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
-import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 @RestController
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "http://localhost:3000")
 
 
 public class PartyController {
@@ -58,6 +55,8 @@ public class PartyController {
 //        System.out.println("DONE-VOTING");
         Party curParty = partySessions.get(code);
         Set<Restaurant> filteredRestaurantSet = curParty.getFilteredList();
+//        Set<Restaurant> filteredRestaurantSet = new HashSet<>();
+
         for (Restaurant cur: filteredIdList) {
             String id = cur.getId();
             Restaurant curRestaurant = curParty.getIdToRoomMap().get(id);
@@ -67,12 +66,25 @@ public class PartyController {
         if (curParty.getCounter() == curParty.getUsers().size()) {
             System.out.println("DONE VOTING");
             List<Restaurant> filteredRestaurantList = new ArrayList<>(filteredRestaurantSet);
+            curParty.setFilteredRestaurantList(filteredRestaurantList);
             return new WebSocketMessage(WebSocketMessage.MessageType.DONE_VOTING, filteredRestaurantList);
         } else {
             System.out.println("NOT DONE VOTING");
             return new WebSocketMessage(WebSocketMessage.MessageType.NOT_DONE, "Not done");
         }
 
+    }
+
+
+    @MessageMapping("/room/{code}/vote-again")
+    @SendTo("/room/{code}")
+    public WebSocketMessage vote_again(@DestinationVariable String code) {
+        System.out.println("LINE 83: VOTE AGAIN");
+        Party curParty = partySessions.get(code);
+        curParty.setCounter(0);
+        Set<Restaurant> temp = new HashSet<>();
+        curParty.setFilteredList(temp);
+        return new WebSocketMessage(WebSocketMessage.MessageType.VOTE_AGAIN, curParty.getFilteredRestaurantList());
     }
 
 

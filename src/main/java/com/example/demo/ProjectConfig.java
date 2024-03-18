@@ -14,7 +14,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @ComponentScan(basePackages = "com.example")
 @EnableFeignClients(basePackages = "com.example")
 //@CrossOrigin(origins = "*")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 
 public class ProjectConfig {
 //

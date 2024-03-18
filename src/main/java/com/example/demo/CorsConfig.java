@@ -11,6 +11,7 @@ public class CorsConfig {
 
     @Bean
     public CorsFilter corsFilter() {
+        System.out.println("CORS FILTER");
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.addAllowedOrigin("*"); // Allow requests from any origin
@@ -18,7 +19,6 @@ public class CorsConfig {
         config.addAllowedHeader("*");
         config.setAllowCredentials(true);
         config.addExposedHeader("Access-Control-Allow-Origin");
-        config.setMaxAge(7200L);
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
     }

@@ -5,6 +5,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -12,6 +13,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 @ComponentScan(basePackages = "com.example")
 @EnableFeignClients(basePackages = "com.example")
+@CrossOrigin(origins = "https://food-app-website-gzpz.vercel.app")
 public class ProjectConfig {
 
     @Bean

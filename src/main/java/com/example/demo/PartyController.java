@@ -81,7 +81,9 @@ public class PartyController {
     public WebSocketMessage getData(@DestinationVariable String code, Coordinates location) {
         System.out.println("GET DATA");
         String authorizationHeader = "Bearer " + "BxEPFYszd5A3EVItnV8d-2z3LXTUIblvhZZacuW9OBjPcy8R6YaPyPFev1rKoGhzofRYaAw6sasSe7qu255hAnps62AO1AECjPHMcE7J7zmnI8wYxv-UZCUPlCLqZXYx";
-        YelpFusionAPIResponse response = yelpFusionProxy.searchBusinesses(location.getLatitude(), location.getLongitude(), 20, authorizationHeader);
+//        YelpFusionAPIResponse response = yelpFusionProxy.searchBusinesses(location.getLatitude(), location.getLongitude());
+        YelpFusionAPIResponse response = yelpFusionProxy.searchBusinessesTest("Naperville", 20, authorizationHeader);
+
 
         System.out.println("LATITUDE: " + location.getLatitude());
         System.out.println("LONGITUDE: " + location.getLongitude());

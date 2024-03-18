@@ -25,6 +25,11 @@ public interface YelpApiClient {
                                            @RequestParam("longitude") double longitude,
                                            @RequestParam("limit") int limit,
                                            @RequestHeader("Authorization") String authorization);
+
+    @GetMapping("/businesses/search")
+    YelpFusionAPIResponse searchBusinessesTest(@RequestParam("location") String location,
+                                           @RequestParam("limit") int limit,
+                                           @RequestHeader("Authorization") String authorization);
 }
 
 
